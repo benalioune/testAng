@@ -1,0 +1,23 @@
+<p>
+ <app-header></app-header>
+  </p>
+  
+   <hr>
+   <mat-spinner *ngIf="isLoading"></mat-spinner>
+   <form (submit) = "onSignup(SignupForm)" #SignupForm = "ngForm" *ngIf="!isLoading"  class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Sign Up</mat-label>
+        <input matInput name = "email" ngModel placeholder="Ex. test@gmail.com" type="email"  #emailInput="ngModel" required email>
+        <mat-error *ngIf="emailInput.invalid"> Please enter a valid email </mat-error>
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>password</mat-label>
+        <input matInput name="password" ngModel #passwordInput="ngModel" placeholder="*****" type="password" required password>
+        <mat-error *ngIf="passwordInput.invalid"> Please enter a valid password</mat-error>
+      </mat-form-field>
+      <button mat-raised-button type="submit">Sign Up</button>
+    </form> 
+  
+
+
